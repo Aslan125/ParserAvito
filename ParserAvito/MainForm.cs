@@ -34,10 +34,10 @@ namespace ParserAvito
                 comboBox_cat.Items.Add(item.Key);
             }
 
-            foreach (var item in parser.AvitoDb.Articles)
-            {
-                articlesBindingSource.Add(item);
-            }
+            //foreach (var item in parser.AvitoDb.Articles)
+            //{
+            //    articlesBindingSource.Add(item);
+            //}
 
             parser.Logger += this.WriterLog;
         }
@@ -126,7 +126,7 @@ namespace ParserAvito
 
 
             string Url = parser.AvitoUrl + loc + cat;
-            textBox_loger.Text = Url;
+           // textBox_loger.Text = Url;
 
 
 
@@ -175,6 +175,26 @@ namespace ParserAvito
             
         }
 
-        
+        private void button_cleanDb_Click(object sender, EventArgs e)
+        {
+            parser.CleanDb();
+        }
+
+        private void button_export_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialog_export.ShowDialog();
+                string path = saveFileDialog_export.FileName;
+                parser.Export(path);
+            }
+            catch (Exception ex)
+            {
+
+                textBox_loger.Text += ex;
+            }
+            
+
+        }
     }
 }

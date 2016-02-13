@@ -59,8 +59,27 @@ namespace ParserAvito
            ParseArticles(_refs);
         }
 
+        public void Export(string path)
+        {
+            var file = File.CreateText(path);
+            foreach (var item in AvitoDb.Articles.ToArray())
+            {
+                string str = item.Numder + "\t" + item.Title + "\t" + item.Info + "\t" + item.Price + "\t" + item.Phone + "\t" + item.Address + "\t" + item.PublicDate + "\t" + item.Url+"\n";
+                file.WriteLine(str);
+            }
+            file.Close();
+        }
 
 
+        public void CleanDb()
+        {
+            foreach (var item in AvitoDb.Articles.ToList())
+            {
+                AvitoDb.Articles.Remove(item);
+            }
+            AvitoDb.SaveChangesAsync();
+            
+        }
 
         #region Private Methods
         public async Task<string[]> ParseRefs(string url, int pageNumber=0)
