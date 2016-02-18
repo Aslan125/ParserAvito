@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace ParserAvito
 {
+    //author Magomed Dadagov
     class Program
     {
         [STAThreadAttribute]

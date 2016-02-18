@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 
 namespace ParserAvito
 {
+    //author Magomed Dadagov
     public class SelectorsRepository
     {
 

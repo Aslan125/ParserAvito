@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.numderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publicDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.articlesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox_loger = new System.Windows.Forms.TextBox();
             this.button_parse = new System.Windows.Forms.Button();
             this.button_refresh = new System.Windows.Forms.Button();
@@ -42,15 +51,6 @@
             this.button_cleanDb = new System.Windows.Forms.Button();
             this.button_export = new System.Windows.Forms.Button();
             this.saveFileDialog_export = new System.Windows.Forms.SaveFileDialog();
-            this.numderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publicDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.articlesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label_sysLogs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).BeginInit();
@@ -74,6 +74,67 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1178, 390);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // numderDataGridViewTextBoxColumn
+            // 
+            this.numderDataGridViewTextBoxColumn.DataPropertyName = "Numder";
+            this.numderDataGridViewTextBoxColumn.HeaderText = "Numder";
+            this.numderDataGridViewTextBoxColumn.Name = "numderDataGridViewTextBoxColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // infoDataGridViewTextBoxColumn
+            // 
+            this.infoDataGridViewTextBoxColumn.DataPropertyName = "Info";
+            this.infoDataGridViewTextBoxColumn.HeaderText = "Info";
+            this.infoDataGridViewTextBoxColumn.Name = "infoDataGridViewTextBoxColumn";
+            this.infoDataGridViewTextBoxColumn.Width = 530;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // publicDateDataGridViewTextBoxColumn
+            // 
+            this.publicDateDataGridViewTextBoxColumn.DataPropertyName = "PublicDate";
+            this.publicDateDataGridViewTextBoxColumn.HeaderText = "PublicDate";
+            this.publicDateDataGridViewTextBoxColumn.Name = "publicDateDataGridViewTextBoxColumn";
+            this.publicDateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // urlDataGridViewTextBoxColumn
+            // 
+            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
+            this.urlDataGridViewTextBoxColumn.Visible = false;
+            this.urlDataGridViewTextBoxColumn.Width = 350;
+            // 
+            // articlesBindingSource
+            // 
+            this.articlesBindingSource.DataSource = typeof(ParserAvito.Articles);
             // 
             // textBox_loger
             // 
@@ -182,66 +243,6 @@
             // 
             this.saveFileDialog_export.Filter = "\"Файл таблицы (*.csv)|*.csv|Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*\"";
             // 
-            // numderDataGridViewTextBoxColumn
-            // 
-            this.numderDataGridViewTextBoxColumn.DataPropertyName = "Numder";
-            this.numderDataGridViewTextBoxColumn.HeaderText = "Numder";
-            this.numderDataGridViewTextBoxColumn.Name = "numderDataGridViewTextBoxColumn";
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            // 
-            // infoDataGridViewTextBoxColumn
-            // 
-            this.infoDataGridViewTextBoxColumn.DataPropertyName = "Info";
-            this.infoDataGridViewTextBoxColumn.HeaderText = "Info";
-            this.infoDataGridViewTextBoxColumn.Name = "infoDataGridViewTextBoxColumn";
-            this.infoDataGridViewTextBoxColumn.Visible = false;
-            this.infoDataGridViewTextBoxColumn.Width = 530;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // publicDateDataGridViewTextBoxColumn
-            // 
-            this.publicDateDataGridViewTextBoxColumn.DataPropertyName = "PublicDate";
-            this.publicDateDataGridViewTextBoxColumn.HeaderText = "PublicDate";
-            this.publicDateDataGridViewTextBoxColumn.Name = "publicDateDataGridViewTextBoxColumn";
-            this.publicDateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // urlDataGridViewTextBoxColumn
-            // 
-            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
-            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
-            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
-            this.urlDataGridViewTextBoxColumn.Visible = false;
-            this.urlDataGridViewTextBoxColumn.Width = 350;
-            // 
-            // articlesBindingSource
-            // 
-            this.articlesBindingSource.DataSource = typeof(ParserAvito.Articles);
-            // 
             // label_sysLogs
             // 
             this.label_sysLogs.AutoSize = true;
@@ -293,6 +294,10 @@
         private System.Windows.Forms.Label label_cat;
         private System.Windows.Forms.Button button_parse;
         private System.Windows.Forms.TextBox textBox_loger;
+        private System.Windows.Forms.Button button_cleanDb;
+        private System.Windows.Forms.Button button_export;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog_export;
+        private System.Windows.Forms.Label label_sysLogs;
         private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn publicDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
@@ -301,9 +306,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn infoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button_cleanDb;
-        private System.Windows.Forms.Button button_export;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog_export;
-        private System.Windows.Forms.Label label_sysLogs;
     }
 }

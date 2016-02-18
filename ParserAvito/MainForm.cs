@@ -196,5 +196,21 @@ namespace ParserAvito
             
 
         }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var form = new ArticleForm();
+            form.Show(this);
+
+            textBox_loger.Text += e.RowIndex;
+            var row= dataGridView1.Rows[e.RowIndex];
+
+            foreach (DataGridViewCell item in row.Cells)
+            {
+                textBox_loger.Text += item.Value;
+            }
+             
+                
+        }
     }
 }

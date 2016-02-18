@@ -10,6 +10,7 @@ using System.Threading;
 
 namespace ParserAvito
 {
+    //author Magomed Dadagov
     public class Parser
     {
         private AvitoContext _avitoDb = new AvitoContext();

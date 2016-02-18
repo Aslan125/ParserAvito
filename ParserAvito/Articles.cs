@@ -8,6 +8,7 @@ namespace ParserAvito
 
     public partial class Articles
     {
+        //author Magomed Dadagov
         [Key]
         [StringLength(500)]
         [Required]

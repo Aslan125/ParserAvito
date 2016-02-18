@@ -7,6 +7,7 @@ namespace ParserAvito
 
     public partial class AvitoContext : DbContext
     {
+        //author Magomed Dadagov
         public AvitoContext()
             : base("name=AvitoContext")
         {

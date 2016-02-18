@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace ParserAvito
 {
-
+    //author Magomed Dadagov
     
     public class UserCollection<TKey, TValue> :  Dictionary<TKey, TValue>,IXmlSerializable
     {
